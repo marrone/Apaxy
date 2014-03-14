@@ -39,6 +39,9 @@ a {
 a:hover {
 	color:#2a2a2a;
 }
+
+h1.request-uri { font-size: 14px; }
+
 /*------------------------------------*\
     Wrapper
 \*------------------------------------*/
@@ -74,11 +77,11 @@ tr:hover td {
 th {
 	text-align:left;
 	font-size:.75em;
-	padding-right:20px;
+	padding-right:5px;
 }
 /* 2nd Column: Filename */
 th + th {
-	width:65%;
+	width:85%;
 }
 /* 3rd Column: Last Modified */
 th + th + th {

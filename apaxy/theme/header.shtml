@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="/webserver/apaxy/theme/style.css"/>
+</head>
+<body>
+    <h1 class='request-uri'><!--#echo var="REQUEST_URI" --></h1>
+
+    <div class="wrapper">

@@ -6,13 +6,17 @@
 #
 
 	# ENABLE INDEXING
-	Options +Indexes
+	Options +Indexes +IncludesNOEXEC
+
+    AddType text/html .shtml
+    AddHandler server-parsed .shtml
+    AddOutputFilter INCLUDES .shtml
 
 	# INDEX OPTIONS
-	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=*
+    IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +SuppressHTMLPreamble
 
 	# HIDE /theme DIRECTORY
-	IndexIgnore .htaccess /theme
+	#IndexIgnore .htaccess /theme
 
 #
 # GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
