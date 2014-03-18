@@ -1,0 +1,60 @@
+<VirtualHost *:80>
+  ServerName localvagrant
+  DocumentRoot /vagrant_projects
+  <Directory /vagrant_projects>
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+    Options +Indexes +IncludesNOEXEC
+
+    AddType text/html .shtml
+    AddHandler server-parsed .shtml
+    AddOutputFilter INCLUDES .shtml
+
+    # see: https://github.com/AdamWhitcroft/Apaxy/blob/master/htaccess.txt
+    <IfModule mod_autoindex.c>
+        IndexOptions +Charset=UTF-8 +FancyIndexing +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +SuppressHTMLPreamble +SuppressSize +SuppressLastModified
+        #IndexOrderDefault Ascending Name
+        HeaderName /webserver/theme/header.shtml
+        ReadmeName /webserver/theme/footer.shtml
+        IndexStyleSheet "/webserver/theme/style.css"
+        # CHANGE ICONS
+        AddIcon /webserver/theme/icons/blank.png ^^BLANKICON^^
+        AddIcon /webserver/theme/icons/folder.png ^^DIRECTORY^^
+        AddIcon /webserver/theme/icons/folder-home.png ..
+        AddIcon /webserver/theme/icons/audio.png .aif .iff .m3u .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg
+        AddIcon /webserver/theme/icons/bin.png .bin
+        AddIcon /webserver/theme/icons/c.png .c
+        AddIcon /webserver/theme/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+        AddIcon /webserver/theme/icons/css.png .css
+        AddIcon /webserver/theme/icons/deb.png .deb
+        AddIcon /webserver/theme/icons/doc.png .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+        AddIcon /webserver/theme/icons/draw.png .svg
+        AddIcon /webserver/theme/icons/eps.png .ai .eps
+        AddIcon /webserver/theme/icons/gif.png .gif
+        AddIcon /webserver/theme/icons/html.png .html .xhtml .shtml .htm
+        AddIcon /webserver/theme/icons/ico.png .ico
+        AddIcon /webserver/theme/icons/java.png .jar
+        AddIcon /webserver/theme/icons/jpg.png .jpg .jpeg
+        AddIcon /webserver/theme/icons/js.png .js .json
+        AddIcon /webserver/theme/icons/markdown.png .md
+        AddIcon /webserver/theme/icons/package.png .pkg .dmg
+        AddIcon /webserver/theme/icons/pdf.png .pdf
+        AddIcon /webserver/theme/icons/php.png .php .phtml
+        AddIcon /webserver/theme/icons/png.png .png
+        AddIcon /webserver/theme/icons/ps.png .ps
+        AddIcon /webserver/theme/icons/psd.png .psd
+        AddIcon /webserver/theme/icons/rar.png .rar
+        AddIcon /webserver/theme/icons/rb.png .rb
+        AddIcon /webserver/theme/icons/rpm.png .rpm
+        AddIcon /webserver/theme/icons/rss.png .rss
+        AddIcon /webserver/theme/icons/sql.png .sql
+        AddIcon /webserver/theme/icons/tiff.png .tiff
+        AddIcon /webserver/theme/icons/text.png .txt .nfo
+        AddIcon /webserver/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
+        AddIcon /webserver/theme/icons/xml.png .xml
+        AddIcon /webserver/theme/icons/zip.png .zip
+        DefaultIcon /webserver/theme/icons/default.png
+    </IfModule>
+  </Directory>
+</VirtualHost>
